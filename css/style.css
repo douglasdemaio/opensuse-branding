@@ -1,0 +1,424 @@
+/* ============================================
+   openSUSE Adaptive Branding — Style System
+   ============================================ */
+
+/* --- Fonts --- */
+@font-face {
+  font-family: 'SUSE';
+  src: url('https://fonts.googleapis.com/css2?family=SUSE:wght@400;600;700&display=swap');
+}
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@400;600;700&display=swap');
+
+:root {
+  /* Brand palette */
+  --geeko-green:    #42cd42;
+  --turquoise-teal: #20caa3;
+  --yarrow-yellow:  #d4cb1b;
+  --radish-red:     #ff5b45;
+  --plum-purple:    #a498ff;
+  --butterfly-blue: #00c8ff;
+
+  /* Layout palette */
+  --bg:          #fff8ee;
+  --bg-card:     #ffffff;
+  --text:        #301a14;
+  --text-muted:  #6b4f45;
+  --accent:      var(--geeko-green);
+  --border:      #e8ddd4;
+
+  /* Sizing */
+  --radius:   24px;
+  --radius-sm: 14px;
+  --max-w:    1140px;
+  --nav-h:    64px;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 24px);
+}
+
+body {
+  font-family: 'SUSE', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a   { color: var(--accent); text-decoration: none; transition: opacity .2s; }
+a:hover { opacity: .78; }
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: 'SUSE', sans-serif;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); margin-bottom: .6em; }
+h3 { font-size: 1.25rem; }
+p  { max-width: 72ch; }
+
+/* --- Layout --- */
+.container {
+  width: min(var(--max-w), 100% - 3rem);
+  margin-inline: auto;
+}
+
+section {
+  padding: 5rem 0;
+}
+section + section {
+  border-top: 1px solid var(--border);
+}
+
+/* --- Navigation --- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  background: rgba(255,248,238,.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+.nav-brand svg { width: 32px; height: 32px; }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text);
+  font-weight: 600;
+  font-size: .95rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width .25s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+/* Hamburger (mobile) */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+.nav-toggle span {
+  display: block; width: 24px; height: 2px;
+  background: var(--text); margin: 5px 0;
+  transition: .3s;
+}
+
+/* --- Hero --- */
+.hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+}
+.hero h1 { margin-bottom: .5em; }
+.hero p  {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-inline: auto;
+  max-width: 56ch;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1.5rem;
+  padding: .45rem 1.1rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+}
+
+/* Chameleon strip animation */
+.color-strip {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 2.5rem;
+}
+.color-strip span {
+  width: 48px; height: 6px;
+  border-radius: 3px;
+  animation: pulse 3s ease-in-out infinite alternate;
+}
+.color-strip span:nth-child(1) { background: var(--geeko-green);    animation-delay: 0s; }
+.color-strip span:nth-child(2) { background: var(--turquoise-teal); animation-delay: .3s; }
+.color-strip span:nth-child(3) { background: var(--yarrow-yellow);  animation-delay: .6s; }
+.color-strip span:nth-child(4) { background: var(--radish-red);     animation-delay: .9s; }
+.color-strip span:nth-child(5) { background: var(--plum-purple);    animation-delay: 1.2s; }
+.color-strip span:nth-child(6) { background: var(--butterfly-blue); animation-delay: 1.5s; }
+
+@keyframes pulse {
+  0%   { opacity: .45; transform: scaleX(.85); }
+  100% { opacity: 1;   transform: scaleX(1); }
+}
+
+/* --- Cards --- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: box-shadow .25s, transform .25s;
+}
+.card:hover {
+  box-shadow: 0 8px 30px rgba(48,26,20,.08);
+  transform: translateY(-3px);
+}
+
+/* --- Logo Gallery --- */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.logo-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.logo-card .logo-icon {
+  width: 120px; height: 120px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.logo-card h3 { color: var(--text); }
+.logo-card p  { font-size: .9rem; color: var(--text-muted); }
+
+/* --- Color DNA Grid --- */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.color-swatch {
+  text-align: center;
+}
+.color-swatch .swatch-block {
+  height: 120px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  margin-bottom: -1px;
+}
+.color-swatch .swatch-info {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 1rem;
+}
+.color-swatch h3 { font-size: 1rem; color: var(--text); margin-bottom: .3em; }
+.color-swatch code {
+  font-family: 'SUSE', monospace;
+  font-size: .95rem;
+  color: var(--text-muted);
+  background: var(--bg);
+  padding: .15em .5em;
+  border-radius: 6px;
+}
+
+/* --- Hierarchy Diagram --- */
+.hierarchy-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.tree-level {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tree-node {
+  text-align: center;
+  padding: 1.2rem 2rem;
+  min-width: 160px;
+}
+.tree-node.parent { border: 2px solid var(--accent); }
+.tree-node.child  { border: 1px solid var(--border); }
+.tree-connector {
+  width: 2px; height: 32px;
+  background: var(--accent);
+  position: relative;
+}
+.tree-connector::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 50%;
+  transform: translateX(-50%);
+  width: 8px; height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Branches line */
+.tree-branches {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+}
+.tree-branches::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--accent);
+}
+.tree-branch-arm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 160px;
+  padding: 0 1rem;
+}
+.tree-branch-arm .arm-line {
+  width: 2px; height: 24px;
+  background: var(--accent);
+}
+
+/* --- Guidelines --- */
+.guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.guideline-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.guideline-preview {
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.guideline-preview.sticker {
+  background: linear-gradient(135deg, var(--geeko-green), var(--turquoise-teal));
+}
+.guideline-preview.wallpaper {
+  background: linear-gradient(135deg, var(--butterfly-blue), var(--plum-purple), var(--radish-red));
+}
+.guideline-preview .inner-sticker {
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  background: var(--bg);
+  border-radius: calc(var(--radius) - 6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.guideline-spec {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+.spec-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .35rem .8rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Low-poly SVG overlay for wallpaper preview */
+.poly-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: .18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpolygon points='0,0 100,30 50,100' fill='%23fff'/%3E%3Cpolygon points='100,30 200,0 200,80 130,100' fill='%23fff'/%3E%3Cpolygon points='50,100 130,100 100,200 0,200' fill='%23fff'/%3E%3Cpolygon points='130,100 200,80 200,200 100,200' fill='%23fff'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* --- Footer --- */
+.footer {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+.footer a { color: var(--accent); }
+
+/* --- Utilities --- */
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.text-center { text-align: center; }
+.text-muted  { color: var(--text-muted); }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--bg);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+  .nav-toggle { display: block; }
+
+  section { padding: 3rem 0; }
+  .hero   { padding: 4rem 0 2.5rem; }
+
+  .tree-branches::before { left: 5%; right: 5%; }
+  .tree-branch-arm { min-width: 120px; padding: 0 .4rem; }
+  .tree-node { padding: .9rem 1rem; min-width: 120px; }
+}

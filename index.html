@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>openSUSE Adaptive Branding</title>
+  <meta name="description" content="The Adaptive Chameleon — openSUSE brand identity system. Colors change, the lizard stays.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🦎</text></svg>">
+</head>
+<body>
+
+<!-- ====== Navigation ====== -->
+<nav class="nav" role="navigation" aria-label="Main">
+  <div class="container">
+    <a href="#" class="nav-brand">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="15" fill="#42cd42"/>
+        <path d="M10 20c2-6 6-10 12-10-2 4-3 7-4 10s-4 4-8 0z" fill="#fff" opacity=".9"/>
+        <circle cx="20" cy="13" r="2" fill="#301a14"/>
+      </svg>
+      <span>openSUSE Branding</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#logos">Logos</a></li>
+      <li><a href="#color-dna">Color DNA</a></li>
+      <li><a href="#hierarchy">Hierarchy</a></li>
+      <li><a href="#guidelines">Guidelines</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ====== Hero / Home ====== -->
+<section id="home" class="hero">
+  <div class="container">
+    <span class="hero-badge">🦎 Adaptive Chameleon</span>
+    <h1>One Lizard,<br>Many Colors</h1>
+    <p>
+      The openSUSE brand is built on a single idea: <strong>the chameleon adapts</strong>.
+      The mascot stays the same — recognizable, friendly, distinctly ours — but its color
+      shifts to match the personality of each sub-project. Tumbleweed gets its own hue,
+      Leap gets another, MicroOS yet another. The shape is constant; the palette is alive.
+    </p>
+    <div class="color-strip">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="mt-3" style="max-width:64ch; margin-inline:auto;">
+      <p class="text-muted" style="font-size:.95rem;">
+        This philosophy lets every project feel distinct while remaining unmistakably
+        part of the openSUSE family. A user who knows the chameleon from Tumbleweed will
+        instantly recognize it on Kalpa — just in a different coat. The identity is
+        <em>modular by design</em>: colors, gradients and accents change;
+        the structure and spirit stay fixed.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Logos ====== -->
+<section id="logos">
+  <div class="container">
+    <h2>Logo Gallery</h2>
+    <p class="text-muted mt-1" style="margin-bottom:2rem;">
+      Each sub-project inherits the chameleon silhouette and pairs it with its
+      signature color from the Color DNA palette.
+    </p>
+
+    <div class="logo-grid">
+
+      <!-- openSUSE (Parent) -->
+      <div class="card logo-card">
+        <div class="logo-icon" style="background: linear-gradient(135deg, #42cd42 0%, #20caa3 100%);">
+          <svg viewBox="0 0 80 80" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 55c5-18 16-30 38-30-6 12-9 21-12 30s-12 12-26 0z" fill="#fff" opacity=".92"/>
+            <circle cx="50" cy="32" r="5.5" fill="#301a14"/>
+            <circle cx="51.5" cy="30.5" r="1.5" fill="#fff"/>
+          </svg>
+        </div>
+        <h3>openSUSE</h3>
+        <p>The parent chameleon. The canonical mark from which all sub-project logos descend.</p>
+      </div>
+
+      <!-- Tumbleweed -->
+      <div class="card logo-card">
+        <div class="logo-icon" style="background: linear-gradient(135deg, #42cd42 0%, #2db82d 100%);">
+          <svg viewBox="0 0 80 80" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 55c5-18 16-30 38-30-6 12-9 21-12 30s-12 12-26 0z" fill="#fff" opacity=".92"/>
+            <circle cx="50" cy="32" r="5.5" fill="#301a14"/>
+            <circle cx="51.5" cy="30.5" r="1.5" fill="#fff"/>
+            <path d="M22 60 Q30 52 40 60 Q50 68 58 60" stroke="#fff" stroke-width="2" fill="none" opacity=".5"/>
+          </svg>
+        </div>
+        <h3>Tumbleweed</h3>
+        <p>Rolling release. Always current, always green. The flagship that never stops moving.</p>
+      </div>
+
+      <!-- Leap -->
+      <div class="card logo-card">
+        <div class="logo-icon" style="background: linear-gradient(135deg, #42cd42 0%, #3aaf3a 100%);">
+          <svg viewBox="0 0 80 80" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 55c5-18 16-30 38-30-6 12-9 21-12 30s-12 12-26 0z" fill="#fff" opacity=".92"/>
+            <circle cx="50" cy="32" r="5.5" fill="#301a14"/>
+            <circle cx="51.5" cy="30.5" r="1.5" fill="#fff"/>
+            <path d="M32 58 L40 46 L48 58Z" fill="#fff" opacity=".45"/>
+          </svg>
+        </div>
+        <h3>Leap</h3>
+        <p>Stable release. Tested, proven, enterprise-ready. A deliberate jump forward.</p>
+      </div>
+
+      <!-- MicroOS -->
+      <div class="card logo-card">
+        <div class="logo-icon" style="background: linear-gradient(135deg, #20caa3 0%, #00c8ff 100%);">
+          <svg viewBox="0 0 80 80" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 55c5-18 16-30 38-30-6 12-9 21-12 30s-12 12-26 0z" fill="#fff" opacity=".92"/>
+            <circle cx="50" cy="32" r="5.5" fill="#301a14"/>
+            <circle cx="51.5" cy="30.5" r="1.5" fill="#fff"/>
+            <rect x="30" y="50" width="20" height="3" rx="1.5" fill="#fff" opacity=".5"/>
+            <rect x="33" y="55" width="14" height="3" rx="1.5" fill="#fff" opacity=".35"/>
+          </svg>
+        </div>
+        <h3>MicroOS</h3>
+        <p>Immutable. Transactional updates, container-native. The minimal foundation.</p>
+      </div>
+
+      <!-- Kalpa -->
+      <div class="card logo-card">
+        <div class="logo-icon" style="background: linear-gradient(135deg, #a498ff 0%, #00c8ff 100%);">
+          <svg viewBox="0 0 80 80" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 55c5-18 16-30 38-30-6 12-9 21-12 30s-12 12-26 0z" fill="#fff" opacity=".92"/>
+            <circle cx="50" cy="32" r="5.5" fill="#301a14"/>
+            <circle cx="51.5" cy="30.5" r="1.5" fill="#fff"/>
+            <circle cx="40" cy="56" r="6" fill="none" stroke="#fff" stroke-width="1.5" opacity=".5"/>
+            <circle cx="40" cy="56" r="2" fill="#fff" opacity=".5"/>
+          </svg>
+        </div>
+        <h3>Kalpa</h3>
+        <p>MicroOS Desktop with KDE Plasma. Purple meets blue — immutability meets elegance.</p>
+      </div>
+
+      <!-- Slowroll -->
+      <div class="card logo-card">
+        <div class="logo-icon" style="background: linear-gradient(135deg, #d4cb1b 0%, #42cd42 100%);">
+          <svg viewBox="0 0 80 80" width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 55c5-18 16-30 38-30-6 12-9 21-12 30s-12 12-26 0z" fill="#fff" opacity=".92"/>
+            <circle cx="50" cy="32" r="5.5" fill="#301a14"/>
+            <circle cx="51.5" cy="30.5" r="1.5" fill="#fff"/>
+            <path d="M30 56 Q36 50 42 56 Q48 62 54 56" stroke="#fff" stroke-width="2" fill="none" opacity=".4" stroke-dasharray="4 3"/>
+          </svg>
+        </div>
+        <h3>Slowroll</h3>
+        <p>Tumbleweed's calmer sibling. Same rolling base, gentler pace. Yellow-green patience.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== Color DNA ====== -->
+<section id="color-dna">
+  <div class="container">
+    <h2>Color DNA</h2>
+    <p class="text-muted mt-1" style="margin-bottom:2rem;">
+      Six colors define the openSUSE spectrum. Each sub-project draws from this
+      shared genetic pool — mixing, tinting and pairing to express its identity.
+      Click any swatch to copy its hex value.
+    </p>
+
+    <div class="color-grid">
+
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: #42cd42;"></div>
+        <div class="swatch-info">
+          <h3>Geeko Green</h3>
+          <code>#42cd42</code>
+        </div>
+      </div>
+
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: #20caa3;"></div>
+        <div class="swatch-info">
+          <h3>Turquoise Teal</h3>
+          <code>#20caa3</code>
+        </div>
+      </div>
+
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: #d4cb1b;"></div>
+        <div class="swatch-info">
+          <h3>Yarrow Yellow</h3>
+          <code>#d4cb1b</code>
+        </div>
+      </div>
+
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: #ff5b45;"></div>
+        <div class="swatch-info">
+          <h3>Radish Red</h3>
+          <code>#ff5b45</code>
+        </div>
+      </div>
+
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: #a498ff;"></div>
+        <div class="swatch-info">
+          <h3>Plum Purple</h3>
+          <code>#a498ff</code>
+        </div>
+      </div>
+
+      <div class="color-swatch">
+        <div class="swatch-block" style="background: #00c8ff;"></div>
+        <div class="swatch-info">
+          <h3>Butterfly Blue</h3>
+          <code>#00c8ff</code>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== Hierarchy ====== -->
+<section id="hierarchy">
+  <div class="container">
+    <h2>Project Hierarchy</h2>
+    <p class="text-muted mt-1" style="margin-bottom:2rem;">
+      <strong>Tumbleweed</strong> and <strong>Leap</strong> are the parent distributions —
+      the trunk of the tree. From them grow specialized branches, each inheriting core
+      infrastructure but tuned for a specific purpose.
+    </p>
+
+    <div class="hierarchy-tree">
+
+      <!-- Parent level -->
+      <div class="tree-level">
+        <div class="card tree-node parent" style="border-color: #42cd42;">
+          <h3 style="color: #42cd42;">🌿 Tumbleweed</h3>
+          <p style="font-size:.85rem;" class="text-muted">Rolling Release Parent</p>
+        </div>
+        <div class="card tree-node parent" style="border-color: #3aaf3a;">
+          <h3 style="color: #3aaf3a;">🐸 Leap</h3>
+          <p style="font-size:.85rem;" class="text-muted">Stable Release Parent</p>
+        </div>
+      </div>
+
+      <!-- Connector -->
+      <div class="tree-connector"></div>
+
+      <!-- Branch level -->
+      <div class="tree-branches">
+        <div class="tree-branch-arm">
+          <div class="arm-line"></div>
+          <div class="card tree-node child" style="border-color: #20caa3;">
+            <h3 style="color: #20caa3;">🧊 MicroOS</h3>
+            <p style="font-size:.82rem;" class="text-muted">Immutable Server &amp; Container Host</p>
+          </div>
+        </div>
+        <div class="tree-branch-arm">
+          <div class="arm-line"></div>
+          <div class="card tree-node child" style="border-color: #a498ff;">
+            <h3 style="color: #a498ff;">💎 Kalpa</h3>
+            <p style="font-size:.82rem;" class="text-muted">Immutable Desktop (KDE Plasma)</p>
+          </div>
+        </div>
+        <div class="tree-branch-arm">
+          <div class="arm-line"></div>
+          <div class="card tree-node child" style="border-color: #d4cb1b;">
+            <h3 style="color: #d4cb1b;">🐌 Slowroll</h3>
+            <p style="font-size:.82rem;" class="text-muted">Slower Rolling Desktop</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Explanation -->
+    <div class="card mt-3" style="max-width: 680px; margin-inline: auto;">
+      <h3>How it works</h3>
+      <p class="mt-1 text-muted" style="font-size:.95rem;">
+        The parent distributions supply the package base, build infrastructure and QA
+        pipeline. Specialized branches <strong>inherit</strong> all of this and layer on
+        their own identity: MicroOS adds immutability and transactional updates, Kalpa
+        wraps that in a Plasma desktop, and Slowroll applies a delayed-update cadence
+        to Tumbleweed's rolling stream. Each branch uses its own Color DNA pair —
+        visually communicating its lineage and its unique purpose.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Guidelines ====== -->
+<section id="guidelines">
+  <div class="container">
+    <h2>Asset Guidelines</h2>
+    <p class="text-muted mt-1" style="margin-bottom:2rem;">
+      Rules for producing consistent physical and digital brand assets across the ecosystem.
+    </p>
+
+    <div class="guidelines-grid">
+
+      <!-- Sticker Guidelines -->
+      <div class="card guideline-card">
+        <div class="guideline-preview sticker">
+          <div class="inner-sticker">
+            <svg viewBox="0 0 80 80" width="56" height="56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 55c5-18 16-30 38-30-6 12-9 21-12 30s-12 12-26 0z" fill="#42cd42" opacity=".92"/>
+              <circle cx="50" cy="32" r="5.5" fill="#301a14"/>
+              <circle cx="51.5" cy="30.5" r="1.5" fill="#fff"/>
+            </svg>
+          </div>
+        </div>
+        <h3>Sticker Guidelines</h3>
+        <p class="text-muted" style="font-size:.93rem;">
+          All stickers use a <strong>3mm Bagel Beige (#fff8ee) border</strong> around the
+          artwork. This gives die-cut stickers a clean, premium edge and ensures the
+          chameleon has breathing room on any surface.
+        </p>
+        <div class="guideline-spec">
+          <span class="spec-tag">📏 3mm border</span>
+          <span class="spec-tag">🎨 #fff8ee beige</span>
+          <span class="spec-tag">✂️ Die-cut ready</span>
+          <span class="spec-tag">📐 24px corner radius</span>
+          <span class="spec-tag">🖨️ CMYK safe</span>
+        </div>
+      </div>
+
+      <!-- Wallpaper Guidelines -->
+      <div class="card guideline-card">
+        <div class="guideline-preview wallpaper">
+          <div class="poly-overlay"></div>
+          <svg viewBox="0 0 80 80" width="56" height="56" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:1;">
+            <path d="M20 55c5-18 16-30 38-30-6 12-9 21-12 30s-12 12-26 0z" fill="#fff" opacity=".85"/>
+            <circle cx="50" cy="32" r="5.5" fill="#301a14"/>
+            <circle cx="51.5" cy="30.5" r="1.5" fill="#fff"/>
+          </svg>
+        </div>
+        <h3>Wallpaper Guidelines</h3>
+        <p class="text-muted" style="font-size:.93rem;">
+          Desktop wallpapers use <strong>low-poly gradient</strong> backgrounds built from
+          the sub-project's Color DNA pair. The chameleon silhouette may appear as a subtle
+          watermark. Gradients flow bottom-left to top-right.
+        </p>
+        <div class="guideline-spec">
+          <span class="spec-tag">🔺 Low-poly mesh</span>
+          <span class="spec-tag">🌈 2-color gradient</span>
+          <span class="spec-tag">↗️ BL → TR flow</span>
+          <span class="spec-tag">🖥️ 3840×2160 min</span>
+          <span class="spec-tag">🦎 Watermark optional</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Additional spec details -->
+    <div class="card mt-3">
+      <h3>Quick Reference</h3>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:1.5rem; margin-top:1rem;">
+        <div>
+          <h4 style="font-size:1rem; color:var(--text);">Sticker Production</h4>
+          <ul style="margin-top:.5rem; padding-left:1.2rem; color:var(--text-muted); font-size:.9rem; line-height:1.8;">
+            <li>Border: 3mm, Bagel Beige (#fff8ee)</li>
+            <li>Corners: 24px radius (scaled to print size)</li>
+            <li>Min size: 40mm × 40mm</li>
+            <li>Bleed: 2mm beyond border</li>
+            <li>Format: SVG source, PDF print-ready</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:1rem; color:var(--text);">Wallpaper Production</h4>
+          <ul style="margin-top:.5rem; padding-left:1.2rem; color:var(--text-muted); font-size:.9rem; line-height:1.8;">
+            <li>Style: Low-poly triangulated gradient</li>
+            <li>Colors: Sub-project Color DNA pair</li>
+            <li>Gradient direction: bottom-left → top-right</li>
+            <li>Resolution: 3840×2160 (4K) minimum</li>
+            <li>Formats: PNG (lossless) + SVG (source)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:1rem; color:var(--text);">Typography</h4>
+          <ul style="margin-top:.5rem; padding-left:1.2rem; color:var(--text-muted); font-size:.9rem; line-height:1.8;">
+            <li>Primary: SUSE (headings, emphasis)</li>
+            <li>Fallback: system sans-serif stack</li>
+            <li>Body weight: 400 (Regular)</li>
+            <li>Heading weight: 700 (Bold)</li>
+            <li>Line height: 1.65 (body), 1.2 (headings)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Footer ====== -->
+<footer class="footer">
+  <div class="container">
+    <p>
+      openSUSE Adaptive Branding Guide
+      · Built with 🦎 and HTML/CSS
+      · <a href="https://www.opensuse.org" target="_blank" rel="noopener">opensuse.org</a>
+    </p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
