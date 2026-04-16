@@ -70,8 +70,10 @@ Contributions are welcome! Whether it's fixing a typo, improving the design, add
 
 ### What You Can Work On
 
+- **Wallpapers** — Design and submit wallpapers! See the [openSUSE Wallpapers wiki](https://en.opensuse.org/openSUSE:Wallpapers) for submissions
 - **Logo updates** — Add new project logos or refine existing SVGs in `images/`
 - **Color palette** — Propose adjustments to the Color DNA
+- **Stickers & merch** — Design new sticker layouts (check existing ones at [shop.opensuse.org](https://shop.opensuse.org))
 - **Guidelines** — Improve or expand the sticker, wallpaper, and typography specs
 - **New sections** — Add brand usage examples, templates, or downloadable assets
 - **Accessibility** — Improve contrast, screen reader support, keyboard navigation
@@ -104,4 +106,6 @@ The website code (HTML, CSS, JS) is available under the [MIT License](https://op
 
 - [openSUSE.org](https://www.opensuse.org)
 - [openSUSE Brand Guidelines](https://en.opensuse.org/openSUSE:Artwork_brand)
+- [openSUSE Wallpapers](https://en.opensuse.org/openSUSE:Wallpapers) — submit your wallpaper designs
+- [openSUSE Shop](https://shop.opensuse.org) — official stickers and merch
 - [openSUSE GitHub](https://github.com/openSUSE)

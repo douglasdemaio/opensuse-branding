@@ -387,6 +387,67 @@ section + section {
   color: var(--text-muted);
 }
 
+/* Real sticker preview */
+.guideline-preview.sticker-real {
+  background: linear-gradient(135deg, var(--geeko-green), var(--turquoise-teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.sticker-preview-img {
+  width: 45%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.2));
+}
+
+/* Real wallpaper preview */
+.guideline-preview.wallpaper-real {
+  background: #1a1a2e;
+  padding: 0;
+}
+.wallpaper-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* Action section: real sticker showcase */
+.action-sticker-showcase {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.showcase-sticker {
+  width: 42%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 20px rgba(0,0,0,.4));
+  transition: transform .3s ease;
+}
+.showcase-sticker:hover {
+  transform: rotate(0deg) scale(1.05) !important;
+}
+
+/* Action section: real wallpaper showcase */
+.action-wallpaper-showcase {
+  background: #1a1a2e;
+  padding: 0;
+}
+.showcase-wallpaper {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
 /* Low-poly SVG overlay for wallpaper preview */
 .poly-overlay {
   position: absolute;
