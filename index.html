@@ -5,33 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>openSUSE Adaptive Branding</title>
   <meta name="description" content="The Adaptive Chameleon — openSUSE brand identity system. Colors change, the lizard stays.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🦎</text></svg>">
 </head>
 <body>
 
-<!-- ====== Navigation ====== -->
-<nav class="nav" role="navigation" aria-label="Main">
-  <div class="container">
-    <a href="#" class="nav-brand">
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="16" cy="16" r="15" fill="#42cd42"/>
-        <path d="M10 20c2-6 6-10 12-10-2 4-3 7-4 10s-4 4-8 0z" fill="#fff" opacity=".9"/>
-        <circle cx="20" cy="13" r="2" fill="#301a14"/>
-      </svg>
-      <span>openSUSE Branding</span>
+<!-- ====== openSUSE universe toolbar (matches opensuse.github.io/request) ====== -->
+<nav class="uni" aria-label="openSUSE sites">
+  <div class="uni-bar">
+    <a class="uni-brand" href="https://www.opensuse.org/" aria-label="openSUSE home">
+      <img src="favicon.svg" alt="openSUSE button logo" width="28" height="28">
+      <span>openSUSE</span>
     </a>
-
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+    <div class="uni-links">
+      <a href="https://events.opensuse.org/">Events</a>
+      <a href="https://news.opensuse.org/">News</a>
+      <a href="https://en.opensuse.org/">Wiki</a>
+      <a href="https://forums.opensuse.org/">Forums</a>
+    </div>
+    <span class="uni-spacer"></span>
+    <button class="uni-dots" id="uni-btn" type="button" aria-expanded="false" aria-controls="uni-panel">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="2.5" cy="2.5" r="1.6"/><circle cx="8" cy="2.5" r="1.6"/><circle cx="13.5" cy="2.5" r="1.6"/><circle cx="2.5" cy="8" r="1.6"/><circle cx="8" cy="8" r="1.6"/><circle cx="13.5" cy="8" r="1.6"/><circle cx="2.5" cy="13.5" r="1.6"/><circle cx="8" cy="13.5" r="1.6"/><circle cx="13.5" cy="13.5" r="1.6"/></svg>
+      <span>openSUSE</span>
     </button>
+  </div>
+  <div class="uni-panel" id="uni-panel">
+    <div class="uni-panel-inner">
+      <div><h3>Get openSUSE</h3><ul>
+        <li><a href="https://get.opensuse.org/tumbleweed/">Tumbleweed</a></li>
+        <li><a href="https://get.opensuse.org/leap/">Leap</a></li>
+        <li><a href="https://get.opensuse.org/microos/">MicroOS</a></li>
+        <li><a href="https://get.opensuse.org/">All distributions</a></li>
+      </ul></div>
+      <div><h3>Build</h3><ul>
+        <li><a href="https://build.opensuse.org/">Build Service</a></li>
+        <li><a href="https://openqa.opensuse.org/">openQA</a></li>
+        <li><a href="https://bugzilla.opensuse.org/">Bugzilla</a></li>
+        <li><a href="https://l10n.opensuse.org/">Weblate</a></li>
+      </ul></div>
+      <div><h3>Community</h3><ul>
+        <li><a href="https://forums.opensuse.org/">Forums</a></li>
+        <li><a href="https://events.opensuse.org/">Events</a></li>
+        <li><a href="https://news.opensuse.org/">News</a></li>
+        <li><a href="https://planet.opensuse.org/">Planet</a></li>
+      </ul></div>
+      <div><h3>Contribute</h3><ul>
+        <li><a href="https://github.com/opensuse">GitHub</a></li>
+        <li><a href="https://en.opensuse.org/">Wiki</a></li>
+        <li><a href="https://en.opensuse.org/openSUSE:Mailing_lists_subscription">Mailing lists</a></li>
+        <li><a href="https://en.opensuse.org/openSUSE:IRC_list">Chat</a></li>
+      </ul></div>
+    </div>
+  </div>
+</nav>
 
-    <ul class="nav-links">
+<!-- ====== Page-local section navigation ====== -->
+<nav class="page-nav" aria-label="Page sections">
+  <div class="container">
+    <ul class="page-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#logos">Logos</a></li>
       <li><a href="#color-dna">Color DNA</a></li>
       <li><a href="#hierarchy">Hierarchy</a></li>
       <li><a href="#guidelines">Guidelines</a></li>
+      <li><a href="#flyers">Flyers</a></li>
       <li><a href="#in-action">In Action</a></li>
     </ul>
   </div>
@@ -41,7 +82,7 @@
 <section id="home" class="hero">
   <div class="container">
     <span class="hero-badge">🦎 Adaptive Chameleon</span>
-    <h1>One Lizard,<br>Many Colors</h1>
+    <h1>We build<br>the tools so<br>you can build<br>the world.</h1>
     <p>
       The openSUSE brand is built on a single idea: <strong>the chameleon adapts</strong>.
       The mascot stays the same — recognizable, friendly, distinctly ours — but its color
@@ -224,13 +265,9 @@
         </div>
       </div>
 
-      <!-- Connector -->
-      <div class="tree-connector"></div>
-
       <!-- Branch level -->
       <div class="tree-branches">
         <div class="tree-branch-arm">
-          <div class="arm-line"></div>
           <div class="card tree-node child" style="border-color: #a498ff;">
             <img src="images/microOS.svg" alt="MicroOS" class="tree-logo">
             <h3 style="color: #a498ff;">MicroOS</h3>
@@ -238,7 +275,6 @@
           </div>
         </div>
         <div class="tree-branch-arm">
-          <div class="arm-line"></div>
           <div class="card tree-node child" style="border-color: #25ac95;">
             <img src="images/Kalpa.svg" alt="Kalpa" class="tree-logo">
             <h3 style="color: #25ac95;">Kalpa</h3>
@@ -246,7 +282,6 @@
           </div>
         </div>
         <div class="tree-branch-arm">
-          <div class="arm-line"></div>
           <div class="card tree-node child" style="border-color: #ff5b45;">
             <img src="images/Slowroll.svg" alt="Slowroll" class="tree-logo">
             <h3 style="color: #ff5b45;">Slowroll</h3>
@@ -259,14 +294,16 @@
 
     <!-- Explanation -->
     <div class="card mt-3" style="max-width: 680px; margin-inline: auto;">
-      <h3>How it works</h3>
+      <h3>One family, every workload</h3>
       <p class="mt-1 text-muted" style="font-size:.95rem;">
-        The parent distributions supply the package base, build infrastructure and QA
-        pipeline. Specialized branches <strong>inherit</strong> all of this and layer on
-        their own identity: MicroOS adds immutability and transactional updates, Kalpa
-        wraps that in a Plasma desktop, and Slowroll applies a delayed-update cadence
-        to Tumbleweed's rolling stream. Each branch uses its own Color DNA pair —
-        visually communicating its lineage and its unique purpose.
+        Every openSUSE distribution shares the same packages, tools and build system —
+        the difference is the cadence and shape each machine needs. <strong>Tumbleweed</strong>
+        brings the newest kernels and hardware support, <strong>Leap</strong> is the stable
+        long-support base, <strong>MicroOS</strong> is a read-only, self-updating container
+        and Kubernetes host, <strong>Kalpa</strong> is the immutable KDE Plasma desktop, and
+        <strong>Slowroll</strong> rolls with fewer, larger updates. Immutable systems share
+        one <strong>transactional-update</strong> workflow: each change lands in a fresh
+        Btrfs snapshot, and the previous system is still there to roll back to.
       </p>
     </div>
   </div>
@@ -359,14 +396,120 @@
         <div>
           <h4 style="font-size:1rem; color:var(--text);">Typography</h4>
           <ul style="margin-top:.5rem; padding-left:1.2rem; color:var(--text-muted); font-size:.9rem; line-height:1.8;">
-            <li>Primary: SUSE (headings, emphasis)</li>
+            <li>Primary: Inter (body, headings, emphasis)</li>
             <li>Fallback: system sans-serif stack</li>
             <li>Body weight: 400 (Regular)</li>
             <li>Heading weight: 700 (Bold)</li>
-            <li>Line height: 1.65 (body), 1.2 (headings)</li>
+            <li>Line height: 1.6 (body), 1.2 (headings)</li>
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== Flyers & Downloads ====== -->
+<section id="flyers">
+  <div class="container">
+    <h2>Flyers &amp; Downloads</h2>
+    <p class="text-muted mt-1" style="margin-bottom:2rem;">
+      Print-ready openSUSE flyers for the distributions, community, development,
+      containers, servers and transactional updates. Download the PDF to print or
+      the SVG source to remix.
+    </p>
+
+    <div class="flyer-grid">
+
+      <div class="card flyer-card">
+        <span class="spec-tag">Square · A6</span>
+        <h3>Community</h3>
+        <p class="text-muted">Join the community, report bugs, and make your first package contribution.</p>
+        <div class="flyer-links">
+          <a href="Flyers/pdf/community-square-front.pdf" download>Front PDF</a>
+          <a href="Flyers/pdf/community-square-back.pdf" download>Back PDF</a>
+          <a href="Flyers/svg/community-square-front.svg" download>Front SVG</a>
+          <a href="Flyers/svg/community-square-back.svg" download>Back SVG</a>
+        </div>
+        <p class="flyer-variants">A6 versions:
+          <a href="Flyers/pdf/community-square-frontA6.pdf" download>front PDF</a> ·
+          <a href="Flyers/pdf/community-square-backa6.pdf" download>back PDF</a> ·
+          <a href="Flyers/svg/community-square-frontA6.svg" download>front SVG</a> ·
+          <a href="Flyers/svg/community-square-backA6.svg" download>back SVG</a>
+        </p>
+      </div>
+
+      <div class="card flyer-card">
+        <span class="spec-tag">A5</span>
+        <h3>Desktop</h3>
+        <p class="text-muted">Four ways to run a free Linux desktop — Tumbleweed, Leap, Kalpa and Slowroll.</p>
+        <div class="flyer-links">
+          <a href="Flyers/pdf/desktop-a5-front.pdf" download>Front PDF</a>
+          <a href="Flyers/pdf/desktop-a5-back.pdf" download>Back PDF</a>
+          <a href="Flyers/svg/desktop-a5-front.svg" download>Front SVG</a>
+          <a href="Flyers/svg/desktop-a5-back.svg" download>Back SVG</a>
+        </div>
+      </div>
+
+      <div class="card flyer-card">
+        <span class="spec-tag">DL</span>
+        <h3>Server</h3>
+        <p class="text-muted">One family, every workload — from long-support Leap to immutable MicroOS and the newest Tumbleweed.</p>
+        <div class="flyer-links">
+          <a href="Flyers/pdf/server-dl-front.pdf" download>Front PDF</a>
+          <a href="Flyers/pdf/server-dl-back.pdf" download>Back PDF</a>
+          <a href="Flyers/svg/server-dl-front.svg" download>Front SVG</a>
+          <a href="Flyers/svg/server-dl-back.svg" download>Back SVG</a>
+        </div>
+      </div>
+
+      <div class="card flyer-card">
+        <span class="spec-tag">A6</span>
+        <h3>Containers</h3>
+        <p class="text-muted">MicroOS as a read-only, self-updating host for Podman and Kubernetes.</p>
+        <div class="flyer-links">
+          <a href="Flyers/pdf/containers-a6-front.pdf" download>Front PDF</a>
+          <a href="Flyers/pdf/containers-a6-back.pdf" download>Back PDF</a>
+          <a href="Flyers/svg/containers-a6-front.svg" download>Front SVG</a>
+          <a href="Flyers/svg/containers-a6-back.svg" download>Back SVG</a>
+        </div>
+      </div>
+
+      <div class="card flyer-card">
+        <span class="spec-tag">A4 trifold</span>
+        <h3>Development</h3>
+        <p class="text-muted">The openSUSE toolchain — OBS, openQA, fresh compilers and a complete packaging workflow.</p>
+        <div class="flyer-links">
+          <a href="Flyers/pdf/development-a4-trifold-front-outside.pdf" download>Front PDF</a>
+          <a href="Flyers/pdf/development-a4-trifold-back-inside.pdf" download>Back PDF</a>
+          <a href="Flyers/svg/development-a4-trifold-front-outside.svg" download>Front SVG</a>
+          <a href="Flyers/svg/development-a4-trifold-back-inside.svg" download>Back SVG</a>
+        </div>
+      </div>
+
+      <div class="card flyer-card">
+        <span class="spec-tag">A5</span>
+        <h3>Immutable Advantage</h3>
+        <p class="text-muted">Why read-only systems are harder to break, easier to recover and not a shield against every compromise.</p>
+        <div class="flyer-links">
+          <a href="Flyers/pdf/immutable-advantage-a5-front.pdf" download>Front PDF</a>
+          <a href="Flyers/pdf/immutable-advantage-a5-back.pdf" download>Back PDF</a>
+          <a href="Flyers/svg/immutable-advantage-a5-front.svg" download>Front SVG</a>
+          <a href="Flyers/svg/immutable-advantage-a5-back.svg" download>Back SVG</a>
+        </div>
+      </div>
+
+      <div class="card flyer-card">
+        <span class="spec-tag">A5</span>
+        <h3>Transactional Update</h3>
+        <p class="text-muted">Stage updates in a fresh Btrfs snapshot, reboot, and roll back cleanly.</p>
+        <div class="flyer-links">
+          <a href="Flyers/pdf/transactional-update-a5-front.pdf" download>Front PDF</a>
+          <a href="Flyers/pdf/transactional-update-a5-back.pdf" download>Back PDF</a>
+          <a href="Flyers/svg/transactional-update-a5-front.svg" download>Front SVG</a>
+          <a href="Flyers/svg/transactional-update-a5-back.svg" download>Back SVG</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -395,7 +538,8 @@
           openSUSE flavor you run.
         </p>
         <p class="mt-1" style="font-size:.9rem;">
-          🛒 Grab yours at <a href="https://shop.opensuse.org" target="_blank" rel="noopener">shop.opensuse.org</a>
+          🎨 Sticker artwork and print files are in the
+          <a href="https://github.com/openSUSE/artwork" target="_blank" rel="noopener">openSUSE artwork repository</a>.
         </p>
       </div>
 

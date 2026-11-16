@@ -3,38 +3,50 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // --- Mobile nav toggle ---
-  const toggle = document.querySelector('.nav-toggle');
-  const links  = document.querySelector('.nav-links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', links.classList.contains('open'));
+  // --- openSUSE universe toolbar panel ---
+  const uniBtn   = document.getElementById('uni-btn');
+  const uniPanel = document.getElementById('uni-panel');
+
+  if (uniBtn && uniPanel) {
+    const setOpen = open => {
+      uniPanel.classList.toggle('open', open);
+      uniBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    uniBtn.addEventListener('click', () => {
+      setOpen(!uniPanel.classList.contains('open'));
     });
-    // Close on link click
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => links.classList.remove('open'));
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && uniPanel.classList.contains('open')) {
+        setOpen(false);
+        uniBtn.focus();
+      }
+    });
+
+    document.addEventListener('click', event => {
+      if (!uniPanel.classList.contains('open')) return;
+      if (uniPanel.contains(event.target) || uniBtn.contains(event.target)) return;
+      setOpen(false);
     });
   }
 
-  // --- Active nav link highlight on scroll ---
+  // --- Active page-section link highlight on scroll ---
   const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a');
+  const pageAnchors = document.querySelectorAll('.page-links a');
 
   const markActive = () => {
     const scrollY = window.scrollY + 100;
+    let activeId = '';
+
     sections.forEach(sec => {
       const top = sec.offsetTop;
       const bottom = top + sec.offsetHeight;
-      const id = sec.getAttribute('id');
-      const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-      if (link) {
-        if (scrollY >= top && scrollY < bottom) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      }
+      if (scrollY >= top && scrollY < bottom) activeId = sec.getAttribute('id');
+    });
+
+    pageAnchors.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
     });
   };
   window.addEventListener('scroll', markActive, { passive: true });
@@ -57,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Subtle entrance animation (Intersection Observer) ---
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -67,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.card, .color-swatch, .tree-node, .guideline-card').forEach(el => {
+  document.querySelectorAll('.card, .color-swatch').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity .5s ease, transform .5s ease';

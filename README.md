@@ -10,16 +10,21 @@ The mascot stays the same — recognizable, friendly, distinctly ours — but it
 
 ```
 ├── index.html          # Main branding guide page
-├── css/style.css       # Style system (variables, layout, components)
-├── js/main.js          # Interactions (nav toggle, copy-to-clipboard, etc.)
-└── images/             # Official project logo SVGs
-    ├── openSUSE.svg
-    ├── Tumbleweed.svg
-    ├── Leap.svg
-    ├── microOS.svg
-    ├── Kalpa.svg
-    └── Slowroll.svg
+├── favicon.svg         # openSUSE button mark used in the universe toolbar
+├── css/style.css       # Style system (theme variables, layout, components)
+├── js/main.js          # Interactions (toolbar panel, copy-to-clipboard, etc.)
+├── images/             # Official project logo SVGs
+│   ├── openSUSE.svg
+│   ├── Tumbleweed.svg
+│   ├── Leap.svg
+│   ├── microOS.svg
+│   ├── Kalpa.svg
+│   └── Slowroll.svg
+└── Flyers/             # Print-ready flyers (PDF + SVG) and editable sources
 ```
+
+The masthead, palette, and light/dark behaviour follow the shared openSUSE
+look used by [opensuse.github.io/request](https://opensuse.github.io/request/).
 
 ## Color DNA
 
@@ -82,7 +87,7 @@ Contributions are welcome! Whether it's fixing a typo, improving the design, add
 
 ### Guidelines for Contributions
 
-- Keep the design consistent with the existing visual language (Bagel Beige background, rounded cards, SUSE font)
+- Keep the design consistent with the existing visual language (light/dark palette, shared openSUSE universe header, rounded cards, Inter font)
 - Use the Color DNA palette — don't introduce arbitrary colors
 - SVG logos should use a `400×400` viewBox for consistency
 - Test your changes in at least one modern browser before submitting
