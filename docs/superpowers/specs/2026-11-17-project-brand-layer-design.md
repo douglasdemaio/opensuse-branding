@@ -42,6 +42,11 @@ heritage Pine navy. Geeko Green is the single bright color shared by both layers
 2. **DaisyUI delivery:** standalone `css/daisyui-themes.css` containing both real DaisyUI v5
    `@plugin "daisyui/theme"` definitions and a plain-CSS `[data-theme=…]` mirror so samples render
    today without Tailwind. No CDN or build step added.
+3. **Purpose (user clarification):** the point is that people in the openSUSE community building
+   an openSUSE-related website can make it look similar in style, colors, branding and CSS.
+   Therefore the tokens, themes and components are shipped as a single drop-in stylesheet
+   `css/project-brand.css` that bundles `css/daisyui-themes.css`; a community site only needs to
+   link that one file. The new section includes a "Use this on your own site" copy-paste block.
 
 ## Architecture / file changes
 
@@ -67,21 +72,31 @@ heritage Pine navy. Geeko Green is the single bright color shared by both layers
      `[data-theme="openSUSE-dark"]`, each a hero with "Have a lot of fun.", Geeko period, and a
      Geeko CTA with dark `#0B2A12` text. Product logos shown as white knockouts on Pine and as
      full-color marks on white sticker chips (Fog ring + soft ink shadow) on Mist.
-  6. Contrast ledger table with all checked pairs and ratios; Geeko-on-white 2.09:1 listed as the
+  6. "Use this on your own site" card with a copy-paste `<link>` snippet for
+     `css/project-brand.css`, the SUSE Google Fonts link, and a list of available `--os-*`
+     properties and DaisyUI theme names.
+  7. Contrast ledger table with all checked pairs and ratios; Geeko-on-white 2.09:1 listed as the
      prohibited pair.
 - Update the Guidelines "Typography" quick-reference list from Inter to SUSE/SUSE Mono.
 - No changes to product section markup, logo SVGs, flyer files, or Kalpa content.
 
+### `css/project-brand.css` (new — the drop-in layer)
+- Contains the `--os-*` project tokens in `:root` (see token table), all `.project-brand` / `.pb-*`
+  styles (swatches, tint strip, specimen, do/don't grids, sample heroes, logo surfaces, contrast
+  table, code snippet), a 768px responsive block, and `@import url("daisyui-themes.css");` so
+  linking this one file gives a community site tokens + themes + components.
+- All references to site-specific variables use fallbacks (e.g. `var(--card, #ffffff)`,
+  `var(--ink, var(--os-ink))`) so the components render standalone as well as inside this guide.
+- `--os-teal` is the literal `#20caa3` here (not an alias of `--b2`) so it works without
+  `style.css`.
+
 ### `css/style.css`
-- Add the `--os-*` project tokens to `:root` (see token table). Existing `--b1`…`--b6`,
-  `--geeko-green`, etc. remain unchanged.
-- Change `body` font-family to `SUSE, …` and heading weights to 600; add `.pb-display` (300).
-- Add scoped `.project-brand` / `.pb-*` styles: section lead, concept cards, swatch grid, tint
-  strip, specimen, do/don't grids, sample heroes, contrast table. Responsive at 768px; honor
-  `prefers-reduced-motion`.
-- Keep existing global layout color variables (`--bg`, `--card`, `--ink`, `--muted`, …) exactly as
-  they are so product sections are visually unchanged. Site chrome already uses Pine in the
-  universe toolbar; the new section demonstrates the rest of the project palette locally.
+- Keep existing `--b1`…`--b6`, `--geeko-green`, etc. and global layout variables (`--bg`,
+  `--card`, `--ink`, `--muted`, …) exactly as they are so product sections are visually unchanged.
+- Change `body` font-family to `SUSE, …` and heading weights to 600.
+- Add the page-nav divider / green dot that separates the project-level nav entry.
+- Site chrome already uses Pine in the universe toolbar; the new section demonstrates the rest
+  of the project palette locally.
 
 ### `css/daisyui-themes.css` (new)
 - `@plugin "daisyui/theme"` blocks for `openSUSE-light` and `openSUSE-dark` with all DaisyUI v5
@@ -89,15 +104,16 @@ heritage Pine navy. Geeko Green is the single bright color shared by both layers
   `info`, `success`, `warning`, `error` and each `-content`).
 - Mirrored `[data-theme="openSUSE-light"]` / `[data-theme="openSUSE-dark"]` blocks setting the
   same `--color-*` names, plus `--os-link`, so samples work without Tailwind.
-- Linked from `index.html` after `css/style.css`.
+- Bundled by `css/project-brand.css` via `@import` (which `index.html` links after `style.css`).
 
 ### `js/main.js`
 - Extend the swatch click-to-copy handler to include `.pb-swatch` (or make it generic via a shared
   class) so the new swatches copy their hex too. Everything else unchanged.
 
 ### `README.md`
-- Add a short "Project Brand" note: roots/leaves concept, link to the new section, note that the
-  guide font is SUSE and that `css/daisyui-themes.css` holds the two DaisyUI themes.
+- Add a "Project Brand" note: roots/leaves concept, a "Reuse it on your own openSUSE-related site"
+  snippet linking `css/project-brand.css`, the `--os-*` token names, the two DaisyUI theme names,
+  and the note that the guide font is SUSE.
 
 ## Token table
 

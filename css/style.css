@@ -83,7 +83,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: SUSE, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -103,7 +103,7 @@ button:focus-visible {
 
 /* --- Typography --- */
 h1, h2, h3, h4 {
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   color: var(--ink);
 }
@@ -198,6 +198,25 @@ section + section {
 .page-links a.active {
   color: var(--green-dark);
   border-bottom-color: var(--green);
+}
+/* Separates the project-level entry from the product-level entries. */
+.page-links .page-divider {
+  width: 1px;
+  align-self: stretch;
+  min-height: 22px;
+  margin: 11px 9px;
+  background: var(--line);
+  flex: none;
+}
+.page-links a[href="#project-brand"]::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--os-geeko);
+  vertical-align: 1px;
 }
 
 /* --- Hero --- */
