@@ -148,16 +148,6 @@
   color: var(--text-muted, var(--os-slate));
   line-height: 1.5;
 }
-.pb-caution {
-  margin-top: .55rem;
-  font-size: .78rem;
-  font-weight: 600;
-  color: var(--text, var(--os-ink));
-  background: var(--os-geeko);
-  color: var(--os-geeko-ink);
-  border-radius: 6px;
-  padding: .3rem .5rem;
-}
 .pb-swatch.copied .pb-hex { background: var(--os-geeko); color: var(--os-geeko-ink); }
 
 /* Typography specimen */
@@ -224,25 +214,6 @@
   font-weight: 600;
 }
 .pb-downloads a:hover { border-color: var(--os-geeko); text-decoration: none; }
-
-/* Do's and don'ts */
-.pb-do-dont {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem;
-}
-.pb-rules {
-  background: var(--card, #ffffff);
-  border: 1px solid var(--line, var(--os-fog));
-  border-top: 3px solid var(--os-geeko-deep);
-  border-radius: var(--radius, 14px);
-  padding: 1.5rem;
-}
-.pb-rules.dont { border-top-color: var(--os-slate); }
-.pb-rules h4 { font-size: 1.05rem; margin-bottom: .9rem; color: var(--ink, var(--os-ink)); }
-.pb-rules ul { margin: 0; padding-left: 1.25rem; color: var(--text-muted, var(--os-slate)); font-size: .92rem; line-height: 1.75; }
-.pb-rules li::marker { color: var(--os-geeko-deep); }
-.pb-rules.dont li::marker { color: var(--os-slate); }
 
 /* Light / dark theme samples */
 .pb-samples {
@@ -372,73 +343,6 @@
 }
 .on-mist .pb-logo-chip img {
   filter: drop-shadow(0 0 1px rgba(15,42,53,.45)) drop-shadow(0 2px 4px rgba(15,42,53,.2));
-}
-
-/* Contrast ledger */
-.pb-table-wrap { overflow-x: auto; }
-.pb-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: .85rem;
-}
-.pb-table th, .pb-table td {
-  text-align: left;
-  padding: .55rem .7rem;
-  border-bottom: 1px solid var(--line, var(--os-fog));
-}
-.pb-table th {
-  color: var(--ink, var(--os-ink));
-  font-weight: 600;
-  font-size: .78rem;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-.pb-table td { color: var(--text-muted, var(--os-slate)); }
-.pb-table code {
-  font-family: "SUSE Mono", ui-monospace, monospace;
-  font-size: .78rem;
-  color: var(--ink, var(--os-ink));
-}
-.pb-badge {
-  display: inline-block;
-  padding: .15rem .5rem;
-  border-radius: 999px;
-  font-size: .74rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.pb-badge.ok { background: var(--os-pine); color: var(--os-bagel); }
-.pb-badge.fail { background: var(--b4, #ff5b45); color: var(--os-ink); }
-.pb-note {
-  margin-top: 1.25rem;
-  padding: .9rem 1.1rem;
-  border-left: 3px solid var(--os-geeko);
-  background: var(--chip, var(--os-mist));
-  border-radius: 0 var(--radius-sm, 10px) var(--radius-sm, 10px) 0;
-  font-size: .88rem;
-  color: var(--text-muted, var(--os-slate));
-}
-
-
-@media (max-width: 768px) {
-  .pb-concept, .pb-type, .pb-do-dont, .pb-samples, .pb-logo-strip {
-    grid-template-columns: 1fr;
-  }
-  .pb-type-panel, .pb-type-card, .pb-rules { padding: 1.25rem; }
-  .pb-sample-hero { padding: 1.4rem 1.25rem; }
-}
-
-/* Copy-paste snippet in the "Use this on your site" block */
-.pb-code {
-  margin: 0;
-  padding: 1rem 1.1rem;
-  overflow-x: auto;
-  background: var(--os-pine);
-  color: var(--os-bagel);
-  border-radius: var(--radius, 14px);
-  font-family: "SUSE Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: .8rem;
-  line-height: 1.7;
 }
 
 /* ------------------------------------------------------------
