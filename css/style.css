@@ -376,32 +376,83 @@ section > .container > p:first-of-type {
   font-size: .78rem;
   color: var(--muted);
 }
+#flavor-brand h3,
+#in-practice h3 {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+#in-practice h3:first-of-type { margin-top: 0; }
 .flavor-source {
-  margin: -1rem auto 2rem;
+  margin: 1rem auto 0;
   font-size: .85rem;
   color: var(--muted);
+  text-align: center;
 }
 .flavor-gradient {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-top: 1rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
 }
-.flavor-gradient-card h4 { font-size: 1rem; color: var(--ink); margin-bottom: .5rem; }
-.flavor-gradient-card p { font-size: .85rem; color: var(--muted); margin-bottom: .9rem; }
+.flavor-gradient-card {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  column-gap: 1.5rem;
+  align-items: start;
+}
+.flavor-gradient-card h4 {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-bottom: .5rem;
+}
+.flavor-gradient-card p {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: .9rem;
+}
+.flavor-gradient-card .guideline-spec {
+  grid-column: 2;
+  grid-row: 3;
+}
 .flavor-gradient-bar {
-  height: 28px;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  height: 100%;
+  min-height: 120px;
+  border-radius: 10px;
+  margin: 0;
 }
 .flavor-gradient-card.is-good .flavor-gradient-bar {
-  background: linear-gradient(90deg, #42cd42, #20caa3);
+  background: linear-gradient(135deg, #42cd42, #20caa3);
 }
 .flavor-gradient-card.is-poor .flavor-gradient-bar {
-  background: linear-gradient(90deg, #42cd42, #a498ff);
+  background: linear-gradient(135deg, #42cd42, #a498ff);
 }
 @media (max-width: 700px){
-  .flavor-gradient { grid-template-columns: 1fr; }
+  .flavor-gradient-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: .75rem;
+  }
+  .flavor-gradient-card h4,
+  .flavor-gradient-card p,
+  .flavor-gradient-card .guideline-spec,
+  .flavor-gradient-bar {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .flavor-gradient-bar {
+    height: 72px;
+    min-height: 72px;
+  }
 }
 
 /* --- Hierarchy Diagram --- */
