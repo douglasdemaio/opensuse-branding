@@ -390,9 +390,11 @@ section > .container > p:first-of-type {
 }
 .flavor-gradient {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 1120px;
+  margin: 1rem auto 0;
   padding-top: 1.75rem;
   border-top: 1px solid var(--line);
 }
@@ -434,6 +436,9 @@ section > .container > p:first-of-type {
 }
 .flavor-gradient-card.is-poor .flavor-gradient-bar {
   background: linear-gradient(135deg, #42cd42, #a498ff);
+}
+@media (max-width: 900px){
+  .flavor-gradient { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px){
   .flavor-gradient-card {
