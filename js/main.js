@@ -32,21 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Active page-section link highlight on scroll ---
-  const sections = document.querySelectorAll('section[id]');
-  const pageAnchors = document.querySelectorAll('.page-links a');
+  const pageAnchors = Array.from(document.querySelectorAll('.page-links a'));
+  const anchorTargets = pageAnchors
+    .map(link => ({ link, target: document.getElementById(link.hash.slice(1)) }))
+    .filter(({ target }) => target);
 
   const markActive = () => {
     const scrollY = window.scrollY + 100;
-    let activeId = '';
+    let activeHash = '';
 
-    sections.forEach(sec => {
-      const top = sec.offsetTop;
-      const bottom = top + sec.offsetHeight;
-      if (scrollY >= top && scrollY < bottom) activeId = sec.getAttribute('id');
+    anchorTargets.forEach(({ link, target }) => {
+      const top = target.offsetTop;
+      const bottom = top + target.offsetHeight;
+      if (scrollY >= top && scrollY < bottom) activeHash = link.hash;
     });
 
     pageAnchors.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
+      link.classList.toggle('active', link.hash === activeHash);
     });
   };
   window.addEventListener('scroll', markActive, { passive: true });
