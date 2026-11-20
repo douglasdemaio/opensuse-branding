@@ -375,6 +375,13 @@ section > .container > p:first-of-type {
   color: var(--ink);
 }
 #in-practice h3:first-of-type { margin-top: 0; }
+.flavor-gradient-section {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+#flavor-brand .flavor-gradient-section h3 {
+  margin: 1rem 0 0;
+}
 .flavor-source {
   margin: 1rem auto 0;
   font-size: .85rem;
@@ -385,15 +392,15 @@ section > .container > p:first-of-type {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   padding-top: 1.75rem;
   border-top: 1px solid var(--line);
 }
 .flavor-gradient-card {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-columns: minmax(140px, 180px) minmax(0, 1fr);
   grid-template-rows: auto 1fr auto;
-  column-gap: 1.5rem;
+  column-gap: 1.75rem;
   align-items: start;
 }
 .flavor-gradient-card h4 {
