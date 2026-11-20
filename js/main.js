@@ -74,6 +74,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Copy logo image on gallery click ---
+  const pngFromSvg = async (src) => {
+    const response = await fetch(src);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const blob = await response.blob();
+    if (!('createImageBitmap' in window)) throw new Error('createImageBitmap unavailable');
+
+    const bitmap = await createImageBitmap(blob);
+    const width = Math.max(bitmap.width, 1);
+    const height = Math.max(bitmap.height, 1);
+    const scale = Math.min(256 / width, 256 / height, 1);
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.max(1, Math.round(width * scale));
+    canvas.height = Math.max(1, Math.round(height * scale));
+    canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    if (typeof bitmap.close === 'function') bitmap.close();
+
+    return new Promise((resolve, reject) => {
+      canvas.toBlob(result => {
+        if (result) resolve(result);
+        else reject(new Error('PNG conversion failed'));
+      }, 'image/png');
+    });
+  };
+
+  document.querySelectorAll('[data-copy-image]').forEach(button => {
+    const status = button.querySelector('.logo-copy-status');
+    let resetTimer;
+
+    const showStatus = message => {
+      if (!status) return;
+      status.textContent = message;
+      status.classList.toggle('visible', Boolean(message));
+      clearTimeout(resetTimer);
+      if (message) {
+        resetTimer = setTimeout(() => {
+          status.textContent = '';
+          status.classList.remove('visible');
+        }, 1600);
+      }
+    };
+
+    button.addEventListener('click', async () => {
+      const src = button.dataset.copyImage;
+      if (!src) return;
+
+      try {
+        if (!navigator.clipboard || typeof ClipboardItem === 'undefined') {
+          throw new Error('Clipboard unavailable');
+        }
+        const png = await pngFromSvg(src);
+        await navigator.clipboard.write([new ClipboardItem({ 'image/png': png })]);
+        showStatus('Copied image');
+      } catch (imageError) {
+        try {
+          const absoluteUrl = new URL(src, window.location.href).href;
+          await navigator.clipboard.writeText(absoluteUrl);
+          showStatus('Copied link');
+        } catch (textError) {
+          showStatus('Copy failed');
+        }
+      }
+    });
+  });
+
   // --- Subtle entrance animation (Intersection Observer) ---
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
