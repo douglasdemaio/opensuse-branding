@@ -299,6 +299,11 @@
   font-weight: 600;
 }
 .pb-sample-link:hover { color: var(--color-link); }
+.pb-note {
+  margin: 1.5rem 0 2.5rem;
+  font-size: .85rem;
+  color: var(--text-muted, var(--os-slate));
+}
 
 /* Product logos on project backgrounds */
 .pb-logo-strip {
